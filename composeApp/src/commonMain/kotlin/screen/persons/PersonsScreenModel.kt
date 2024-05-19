@@ -25,9 +25,10 @@ class PersonsScreenModel(private val personRepository: PersonRepository): Screen
         }
     }
 
-    suspend fun loadPersons() {
-        val newPersons = (personRepository.fetchPersons())
-        personRepository.addPersons(newPersons)
+    private suspend fun loadPersons() {
+        personRepository.addPersons(personRepository.run {
+            fetchPersons()
+        })
         _persons.value = personRepository.getPersons()
     }
 

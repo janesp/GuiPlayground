@@ -1,6 +1,7 @@
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -36,9 +37,9 @@ fun App() {
                 bottomBar = {
                     BottomNavigation {
                         TabNavigationItem(HomeTab)
-                        TabNavigationItem(ProfileTab)
                         TabNavigationItem(PersonsTab)
                         TabNavigationItem(PrescriptionsTab)
+                        TabNavigationItem(ProfileTab)
                         TabNavigationItem(SettingsTab)
                     }
                 }
@@ -56,7 +57,14 @@ private fun RowScope.TabNavigationItem(tab: Tab) {
         selected = tabNavigator.current == tab,
         onClick = { tabNavigator.current = tab },
         label = { Text((tab.options.title)) },
-        icon = {}
+        icon = {
+            tab.options.icon?.let { icon ->
+                Icon(
+                    painter = icon,
+                    contentDescription = tab.options.title
+                )
+            }
+        }
     )
 }
 

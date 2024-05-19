@@ -13,6 +13,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -26,7 +27,7 @@ class PersonsScreen: Screen {
     @Composable
     override fun Content() {
         val screenModel: PersonsScreenModel = koinScreenModel()
-        val persons = screenModel.persons.collectAsState()
+        val persons by screenModel.persons.collectAsState()
 
         Scaffold(
             topBar = {
@@ -44,7 +45,7 @@ class PersonsScreen: Screen {
                     columns = GridCells.Adaptive(minSize = 200.dp),
                     modifier = Modifier.padding(5.dp)
                 ) {
-                    items(persons.value) {person: Person ->
+                    items(persons) {person: Person ->
                         PersonRow(person)
                     }
                 }

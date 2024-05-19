@@ -1,7 +1,10 @@
 package tab.persons
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabOptions
@@ -18,12 +21,18 @@ object PersonsTab : Tab {
 
     override val options: TabOptions
         @Composable
-        get() = remember {
-            TabOptions(
-                index = 4u,
-                title = "Persons",
-                icon = null
-            )
+        get() {
+            val title = "Persons"
+            val icon = rememberVectorPainter(Icons.Default.AccountBox)
+
+            return remember {
+                TabOptions(
+                    index = 4u,
+                    title = title,
+                    icon = icon
+                )
+            }
         }
+
 
 }
