@@ -1,4 +1,4 @@
-package com.abdagon.guibase2
+package com.abdagon.guiplayground
 
 import App
 import android.os.Bundle

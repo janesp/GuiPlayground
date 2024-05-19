@@ -2,7 +2,7 @@ package data.prescriptions
 
 import kotlinx.serialization.json.Json
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import guibase2.composeapp.generated.resources.Res
+import guiplayground.composeapp.generated.resources.Res
 
 class PrescriptionsRepository {
     private val _prescriptions = mutableListOf<Prescription>()

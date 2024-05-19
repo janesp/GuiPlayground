@@ -13,8 +13,8 @@ import cafe.adriel.voyager.navigator.LocalNavigator
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.stringResource
 import screen.details.DetailsScreen
-import guibase2.composeapp.generated.resources.Res
-import guibase2.composeapp.generated.resources.app_name
+import guiplayground.composeapp.generated.resources.Res
+import guiplayground.composeapp.generated.resources.app_name
 
 class HomeScreen : Screen {
     @OptIn(ExperimentalResourceApi::class)

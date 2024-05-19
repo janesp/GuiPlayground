@@ -2,7 +2,7 @@ package data.persons
 
 import kotlinx.serialization.json.Json
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import guibase2.composeapp.generated.resources.Res
+import guiplayground.composeapp.generated.resources.Res
 
 class PersonRepository {
     private val _persons = mutableListOf<Person>()
